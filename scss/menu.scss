@@ -1,0 +1,133 @@
+input{
+    position: absolute;
+    visibility: hidden;
+}
+
+@media only screen and (max-width: 599.9px) {
+input{
+    visibility: visible;
+}
+
+.innerWrapper .myNameClass .innerMyNameClass .myName {
+    font-size: 1.5rem;
+}
+
+.innerWrapper .myNameClass .innerMyNameClass {
+    padding: 40px 0 50px 0;
+}
+
+.menu .toggler {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 21.5px;
+    right: 21.5px;
+    cursor: pointer;
+    z-index: 3;
+    opacity: 0;
+  }
+
+.menu .menuButton{
+    border-radius: 50%;
+    top:20px;
+    right: 20px;
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    padding: 4.5px;
+    z-index: 2;
+    cursor: pointer;
+    box-shadow: 0px 1px 4px black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu .menuButton>div{
+    position: relative;
+    width: 70%;
+    height: 2px;
+    background-color: white;
+    box-shadow: 0px 1px 0px black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 400ms ease;
+}
+
+.menu .menuButton>div:before, 
+.menu .menuButton>div:after{
+    content: '';
+    height: 2px;
+    width: 70%;
+    background-color: inherit;
+    z-index: 1;
+    position: absolute;
+    top: -10px;
+    box-shadow: 0px 1px 0px black;
+}
+
+.menu .menuButton>div:after{
+    top: 10px;
+}
+
+.menu .toggler:checked + .menuButton>div{
+    transform: rotate(135deg);
+}
+
+.menu .toggler:checked + .menuButton>div:before,
+.menu .toggler:checked + .menuButton>div:after{
+    width: 100%;
+    top: 0;
+    transform: rotate(90deg);
+}
+
+.menu .toggler:checked:hover + .menuButton>div{
+    transform: rotate(225deg);
+}
+
+.menu .toggler:checked ~ .myNavBar{
+    visibility: visible;
+}
+
+.menu .toggler:checked ~ .myNavBar>div{
+    transform: scale(1);
+    transition-duration: 400ms;
+}
+
+
+.menu .toggler:checked ~ .myNavBar>div>div{
+    opacity: 1;
+    transition: opacity 400ms ease;
+}
+
+
+
+.menu .myNavBar{
+    position: fixed;
+    right: 0;
+    margin-right: 0;
+    width: 100%;
+    height: 100%;
+    visibility: visible;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu .myNavBar>div{
+    margin-top: 50px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 0% 100% 0% 100%;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: none;
+    transform: scaleY(0);
+    transition: all 400ms ease;
+}
+
+}
